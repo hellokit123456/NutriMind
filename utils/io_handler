@@ -1,0 +1,6 @@
+def get_user_input():
+    return input("Enter the name of the dish you ate: ")
+
+def show_output(output):
+    print("\n--- Estimated Nutritional Profile ---")
+    print(output)
