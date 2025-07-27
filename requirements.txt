@@ -1,0 +1,8 @@
+langchain>=0.1.16
+langchain-community>=0.0.22
+langchain-ollama>=0.1.1
+openai>=1.25.0
+pandas>=2.2.0
+tqdm>=4.66.0
+python-dotenv>=1.0.1
+ollama  # If you're running the Ollama server locally
