@@ -1,0 +1,19 @@
+# agent/recipe_extractor.py
+
+from langchain_core.prompts import ChatPromptTemplate
+from langchain_core.output_parsers import StrOutputParser
+
+def get_recipe_and_ingredients_chain(llm):
+    prompt = ChatPromptTemplate.from_template("""
+    You are a professional nutritionist. Given the name of an Indian dish: {dish},
+    output the recipe name, ingredients (with approximate quantities in grams or ml),
+    and the typical cooking method.
+
+    Format:
+    Recipe Name: <recipe name>
+    Ingredients:
+    - <ingredient1>: <quantity>
+    - <ingredient2>: <quantity>
+    Cooking Method: <brief cooking method description>
+    """)
+    return prompt | llm | StrOutputParser()
