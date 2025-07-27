@@ -39,7 +39,7 @@ This eliminates the need for manual data entry and expands dietary support to re
 ### Installation
 
 ```bash
-git clone https://github.com/yourusername/NutriMind.git
+git clone https://github.com/hellokit123456/NutriMind.git
 cd NutriMind
 pip install -r requirements.txt
 ```
