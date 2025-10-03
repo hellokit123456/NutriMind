@@ -6,18 +6,20 @@ from langchain_community.chat_models import ChatOllama
 
 
 def get_recipe_and_ingredients_chain(llm):
-    prompt = ChatPromptTemplate.from_template("""
-    You are a professional nutritionist. Given the name of an Indian dish: {dish},
-    output the recipe name, ingredients (with approximate quantities in grams or ml),
-    and the typical cooking method.
+    prompt = ChatPromptTemplate.from_template(
+        """
+You are a professional nutritionist. Given the name of an Indian dish: {dish},
+output the recipe name, ingredients (with approximate quantities in grams or ml),
+and the typical cooking method.
 
-    Format:
-    Recipe Name: <recipe name>
-    Ingredients:
-    - <ingredient1>: <quantity>
-    - <ingredient2>: <quantity>
-    Cooking Method: <brief cooking method description>
-    """)
+Format:
+Recipe Name: <recipe name>
+Ingredients:
+- <ingredient1>: <quantity>
+- <ingredient2>: <quantity>
+Cooking Method: <brief cooking method description>
+"""
+    )
     return prompt | llm | StrOutputParser()
 
 
